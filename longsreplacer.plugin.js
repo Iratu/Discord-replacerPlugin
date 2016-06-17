@@ -1,18 +1,5 @@
 //META{"name":"sreplacer"}*//
 var sreplacer = function () {};
-/*
-sreplacer.prototype.convert = function () {
-    $(".markup").each(function() { 
-		var msg = $(this).html();
-		if(msg.indexOf("ſ") >= 0){
-			msg = msg.replaceAll("ſ","s",true);
-			msg = msg.replaceAll("amn't","am not",true);
-			msg = msg.replaceAll("shew","show",true);
-			$(this).html(msg);
-		}
-    });
-};*/
-
 //Thanks to iamusername for the improvement.
 sreplacer.prototype.convert = function () {
     $(".markup").each(function() {
@@ -20,10 +7,10 @@ sreplacer.prototype.convert = function () {
         var replacements = {
             "ſ":"s",
             "shew":"show",
-            "amn’t":"am not",
+			"amn’t":"am not",
 			"amn't":"am not",
-            "chuse":"choose",
-            "scissars":"scissors"
+			"chuse":"choose",
+			"scissars":"scissors"
         };
         var replacementMade = false;
         for (var search in replacements) {
