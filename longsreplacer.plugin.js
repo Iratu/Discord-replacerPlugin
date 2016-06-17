@@ -1,20 +1,43 @@
 //META{"name":"sreplacer"}*//
-
-
-
-
-
 var sreplacer = function () {};
-
+/*
 sreplacer.prototype.convert = function () {
     $(".markup").each(function() { 
-		var msg = $(this).text();
+		var msg = $(this).html();
 		if(msg.indexOf("ſ") >= 0){
 			msg = msg.replaceAll("ſ","s",true);
-			$(this).text(msg);
+			msg = msg.replaceAll("amn't","am not",true);
+			msg = msg.replaceAll("shew","show",true);
+			$(this).html(msg);
 		}
     });
+};*/
+
+//Thanks to iamusername for the improvement.
+sreplacer.prototype.convert = function () {
+    $(".markup").each(function() {
+        var msg = $(this).html();
+        var replacements = {
+            "ſ":"s",
+            "shew":"show",
+            "amn’t":"am not"
+        };
+        var replacementMade = false;
+        for (var search in replacements) {
+            var replacement = replacements[search];
+            if (msg.indexOf(search) >= 0) {
+                msg = msg.replaceAll(search, replacement, true);
+
+                replacementMade = true;
+            }
+        }
+        if (replacementMade !== false) {
+            $(this).html(msg);
+        }
+
+    });
 };
+
 
 sreplacer.prototype.onMessage = function () {
     this.convert();
