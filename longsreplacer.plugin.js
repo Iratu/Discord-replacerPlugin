@@ -20,7 +20,10 @@ sreplacer.prototype.convert = function () {
         var replacements = {
             "ſ":"s",
             "shew":"show",
-            "amn’t":"am not"
+            "amn’t":"am not",
+			"amn't":"am not",
+            "chuse":"choose",
+            "scissars":"scissors"
         };
         var replacementMade = false;
         for (var search in replacements) {
