@@ -5,12 +5,13 @@ sreplacer.prototype.convert = function () {
     $(".markup").each(function() {
         var msg = $(this).html();
         var replacements = {
-            "ſ":"s",
-            "shew":"show",
-			"amn’t":"am not",
-			"amn't":"am not",
-			"chuse":"choose",
-			"scissars":"scissors"
+		"ſ":"s",
+		"shew":"show",
+		"amn’t":"am not",
+		"amn't":"am not",
+		"chuse":"choose",
+		"scissars":"scissors",
+		"&c":"etc"
         };
         var replacementMade = false;
         for (var search in replacements) {
@@ -55,7 +56,7 @@ sreplacer.prototype.getDescription = function () {
     return "Replaces the long s (ſ) and turns it into a regular s.";
 };
 sreplacer.prototype.getVersion = function () {
-    return "0.0.1";
+    return "0.0.2";
 };
 sreplacer.prototype.getAuthor = function () {
     return "Iratu";
